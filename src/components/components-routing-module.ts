@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'enquireForm', component:EnquireForm},
   { path: 'contact-us', component:ContactUs},
   { path: 'sitemap', component:SiteMap},
-  { path: '*', redirectTo: '', pathMatch: 'full'}
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
