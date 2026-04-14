@@ -1,0 +1,36 @@
+<section class="product_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center">Available <span class="short_color">Products</span></h2>
+                <p class="title_para">We deliver high-quality products designed for reliability and performance.</p>
+                <div class="card">
+                    <p-tabs [(value)]="activeTab" scrollable>
+                        <p-tablist>
+                            @for (tab of scrollableTabs; track trackById(tab); let i = $index;) {
+                            <p-tab [value]="i.toString()">
+                                {{ tab }}
+                            </p-tab>
+                            }
+                        </p-tablist>
+                        <p-tabpanels>
+                            <div class="items">
+                                <img src="service-1.png" alt="product-image" />
+                                <h3>Maleic modified rosin derivatives</h3>
+                            </div>
+                            <div class="items">
+                                <img src="service_2.jpg" alt="product-image" />
+                                <h3>Phenol modified rosin derivatives</h3>
+                            </div>
+                            <!-- @for (tab of scrollableTabs; track trackById; let i = $index;) {
+                            <p-tabpanel [value]="i.toString()">
+                                <p class="m-0">{{ tab }}</p>
+                            </p-tabpanel>
+                            } -->
+                        </p-tabpanels>
+                    </p-tabs>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

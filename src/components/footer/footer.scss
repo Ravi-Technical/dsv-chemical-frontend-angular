@@ -1,0 +1,154 @@
+// .top_footer {
+//     background: #292929;
+//     color: #fff;
+//     padding: 10px;
+// }
+
+.footer {
+    background: #0d0f14;
+    color: #fff;
+    padding-top: 5rem;
+}
+
+/* Main Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 60px 40px;
+    flex-wrap: wrap;
+}
+
+/* Columns */
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-col h3 {
+    color: #ddd;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* About Section */
+.logo h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Lists */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 14px;color: #a79e9e;
+    cursor: pointer;
+}
+
+.footer-col ul li:hover {
+    color: #2f6edb;
+}
+
+/* Newsletter */
+.newsletter input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+}
+
+.newsletter button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #2f6edb;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background: #1e4fa8;
+}
+
+.note {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #bbb;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1d25;
+    padding: 2rem 60px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom span {
+    color: #2f6edb;
+}
+
+.links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.links a:hover {
+    color: #2f6edb;
+}
+
+p {
+    margin: 0;
+    color: #a79e9e;
+    font-weight: 500;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .links a {
+        margin: 0 10px;
+    }
+}

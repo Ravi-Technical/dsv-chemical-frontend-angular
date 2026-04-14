@@ -1,0 +1,37 @@
+.product_wrapper {
+    padding: 4rem 0 5rem 0;
+}
+.card {border: none;}
+
+.product_wrapper h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+p.title_para {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.items img {
+    width: 100%; min-height: 210px;
+}
+
+.items {
+    width: 25%;box-shadow: 2px -1px 14px 11px #dddddda8;
+}
+
+p-tabpanels.p-tabpanels {
+    display: flex;
+    gap: 30px;
+}
+
+.items h3 {
+    font-size: 19px;
+    padding: 20px;
+    line-height: 26px;
+}

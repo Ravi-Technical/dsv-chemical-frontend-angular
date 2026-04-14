@@ -1,0 +1,81 @@
+<section class="book_appointment">
+    <div class="container">
+        <div class="items">
+            <div class="item">
+                <img src="form-img.png" alt="Appointment Image">
+            </div>
+            <div class="item">
+                <h1 class="title">
+                    Are you ready to book an <span class="short_color">appointment now!</span>
+                </h1>
+                <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <!-- Name -->
+                        <mat-form-field appearance="outline" class="half-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput formControlName="name" placeholder="Enter your name" />
+                            <mat-error *ngIf="appointmentForm.controls['name'].hasError('required')">
+                                Name is required
+                            </mat-error>
+                            <mat-error *ngIf="appointmentForm.controls['name'].hasError('minlength')">
+                                Minimum 3 characters required
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Email -->
+                        <mat-form-field appearance="outline" class="half-width">
+                            <mat-label>Your Email</mat-label>
+                            <input matInput type="email" formControlName="email" placeholder="Enter email" />
+                            <mat-error *ngIf="appointmentForm.controls['email'].hasError('required')">
+                                Email is required
+                            </mat-error>
+                            <mat-error *ngIf="appointmentForm.controls['email'].hasError('email')">
+                                Enter valid email
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="outline" class="half-width">
+                            <mat-label>Your Phone</mat-label>
+                            <input matInput type="text" formControlName="phone" placeholder="Enter phone" />
+                            <mat-error *ngIf="appointmentForm.controls['phone'].hasError('required')">
+                                Phone is required
+                            </mat-error>
+                            <mat-error *ngIf="appointmentForm.controls['phone'].hasError('phone')">
+                                Enter valid phone
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="half-width">
+                            <mat-label>Your Subject</mat-label>
+                            <input matInput type="text" formControlName="subject" placeholder="Enter subject" />
+                            <mat-error *ngIf="appointmentForm.controls['subject'].hasError('required')">
+                                Subject is required
+                            </mat-error>
+                            <mat-error *ngIf="appointmentForm.controls['subject'].hasError('subject')">
+                                Enter valid subject
+                            </mat-error>
+                        </mat-form-field>
+
+                        </div>
+
+                        <!-- Message -->
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Message</mat-label>
+                            <textarea matInput rows="6" formControlName="message"
+                                placeholder="Enter message"></textarea>
+                            <mat-error *ngIf="appointmentForm.controls['message'].hasError('required')">
+                                Message is required
+                            </mat-error>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="appointmentForm.invalid" class="submit-button">
+                            Submit
+                        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,147 @@
+ .service-section {
+     padding:4rem 2rem 5rem 2rem;
+     background: #f5f5f5;
+ }
+
+ .service-container {
+     display: flex;
+     gap: 24px;
+     align-items: stretch;
+ }
+
+ .right-card:after {
+     background-image: url("/info-card-shape.png");
+     position: absolute;
+     content: "";
+     z-index: 1;
+     left: 111px;
+     top: 0;
+     height: 100%;
+     width: 100%;
+     opacity: 0.1;
+ }
+
+ .right-card {
+     position: relative;
+ }
+
+ h4 {
+     font-size: 50px;
+     font-weight: 700;
+     margin-bottom: 30px;
+ }
+
+ /* LEFT GREEN CARD */
+
+ .left-card {
+     background: #576c4d;
+     border-radius: 32px;
+     padding: 30px;color:#fff;
+     width: 300px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .title {
+     font-size: 20px;
+     font-weight: 500;
+ }
+
+ .count {
+     font-size: 32px;
+     font-weight: 700;
+     margin-top: 10px;
+ }
+
+ .bottom {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .left-card img {
+    border-radius: 10px;
+    padding: 25px;
+    background: #fff;
+}
+
+ /* CENTER IMAGE */
+
+ .center-card {
+     flex: 1;
+     border-radius: 32px;
+     overflow: hidden;
+ }
+
+ .left-card, .center-card, .right-card {
+    height: 400px;
+}
+
+ .center-card img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ /* RIGHT BLUE CARD */
+
+ .right-card {
+     background: #cfd9e6;
+     border-radius: 32px;
+     padding: 30px; 
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .right-card p {
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    top: 80px;
+    line-height: 30px;
+}
+
+ .heading {
+     color: #292929;
+     font-size: 32px;
+     font-weight: 600;
+ }
+
+ .desc {
+     margin: 20px 0;
+     color: #555;
+     line-height: 1.6;
+ }
+
+ /* BUTTON */
+
+ .btn {
+     background: #e6e6e6;
+     border: none;
+     padding: 14px 30px;
+     border-radius: 28px;
+     font-size: 16px;
+     cursor: pointer;
+     width: fit-content;
+ }
+
+ .btn:hover {
+     background: #2e3c28; color: #fff;
+ }
+
+
+ @media (max-width: 992px) {
+
+     .service-container {
+         flex-direction: column;
+     }
+
+     .left-card,
+     .right-card {
+         width: 100%;
+     }
+
+ }
