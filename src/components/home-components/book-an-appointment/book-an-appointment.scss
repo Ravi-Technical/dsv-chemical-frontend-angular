@@ -54,3 +54,32 @@ section.book_appointment {
     text-transform: uppercase;
     font-weight: 600;
 }
+
+// Mobile Responsive CSS
+@media (max-width:767px) {
+    .items {
+        display: block;
+        gap: 0rem;
+        padding: 0rem;
+    }
+
+    section.book_appointment {
+        padding: 1.5rem;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    .half-width {
+        width: 100%;
+    }
+   .item img {width: 100%;}
+
+    .title {
+        font-size: 25px;margin-top: 2rem;
+    }
+
+
+
+}

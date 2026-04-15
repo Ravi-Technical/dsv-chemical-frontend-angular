@@ -4,12 +4,14 @@
     box-shadow: 0px 10px 30px #c2bcbc;
 }
 
-h2 {font-size: 50px;
+h2 {
+    font-size: 50px;
     font-weight: 700;
-    margin-bottom: 30px;}
+    margin-bottom: 30px;
+}
 
 section.about_wraper {
-    padding:8rem 0 5rem 0;
+    padding: 8rem 0 5rem 0;
 }
 
 img#decorator1 {
@@ -22,7 +24,7 @@ img#decorator1 {
 .about_img:before {
     background-image: url("/bg-plus.png");
     position: absolute;
-    content: ''; 
+    content: '';
     z-index: -9;
     right: -90px;
     top: -50px;
@@ -40,10 +42,35 @@ img#decorator1 {
     font-size: 15px;
     line-height: 22px;
 }
-.readMore_btn{
+
+.readMore_btn {
     background: #576c4d;
-    border: none;color: #fff;
+    border: none;
+    color: #fff;
     font-size: 14px;
     padding: 18px 30px;
-    border-radius: 30px; 
+    border-radius: 30px;
+}
+
+// Mobile Responsive CSS
+@media (max-width:767px) {
+    .about_img:before {
+        right: 0;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        margin-top: 2rem;
+    }
+
+    img#decorator1 {
+        position: absolute;
+        right: 0;transform: translate(0px, 0px);
+        width: 100px;
+        top: 27%;
+    }
+
 }

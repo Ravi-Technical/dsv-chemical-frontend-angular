@@ -1,7 +1,10 @@
 .product_wrapper {
     padding: 4rem 0 5rem 0;
 }
-.card {border: none;}
+
+.card {
+    border: none;
+}
 
 .product_wrapper h2 {
     font-size: 50px;
@@ -18,11 +21,13 @@ p.title_para {
 }
 
 .items img {
-    width: 100%; min-height: 210px;
+    width: 100%;
+    min-height: 210px;
 }
 
 .items {
-    width: 25%;box-shadow: 2px -1px 14px 11px #dddddda8;
+    width: 25%;
+    box-shadow: 2px -1px 14px 11px #dddddda8;
 }
 
 p-tabpanels.p-tabpanels {
@@ -34,4 +39,31 @@ p-tabpanels.p-tabpanels {
     font-size: 19px;
     padding: 20px;
     line-height: 26px;
+}
+
+// Mobile Responsive CSS
+@media (max-width:767px) {
+    p.title_para {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    p-tabpanels.p-tabpanels {
+        display: block;
+    }
+
+    .product_wrapper h2 {
+        font-size: 30px;
+    }
+
+    .product_wrapper {
+        padding: 2rem 0 2rem 0;
+    }
+
+    .items {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+
 }
