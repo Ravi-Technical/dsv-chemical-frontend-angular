@@ -41,6 +41,11 @@ p-tabpanels.p-tabpanels {
     line-height: 26px;
 }
 
+.p-tab-active {
+    border-color: #576c4d;
+    color: #576c4d;
+}
+
 // Mobile Responsive CSS
 @media (max-width:767px) {
     p.title_para {
