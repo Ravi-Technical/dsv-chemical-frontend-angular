@@ -1,1 +1,63 @@
-<p>contact-us works!</p>
+<!-- contact-us.component.html -->
+<section class="wraper_contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="title text-left mb-4"><b>Contact Us</b></h1>
+        <div class="content-section mb-4">
+          <strong>📍 Address:</strong>
+          <p>D.S.V Chemicals Pvt. Ltd., 401, E-Square, Subhash Road, Vile Parle (East),
+            Mumbai - 400057</p>
+        </div>
+        <div class="content-section">
+          <p><strong>📞 Phone:</strong> +91 22 26120141 / 42 / 44 / 45</p><br />
+          <p><strong>📠 Fax:</strong> +91 22 26120147</p><br /> 
+          <p><strong>✉️ Email:</strong><br />
+            <a href="mailto:sales@dsv-chemicals.com">sales@dsv-chemicals.com</a> (India) |
+            <a href="mailto:export@dsv-chemicals.com">export@dsv-chemicals.com</a> (Exports)
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <mat-card>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" required>
+              <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                Enter a valid email
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" required>
+              <mat-error *ngIf="contactForm.get('phone')?.hasError('required')">
+                Phone is required
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Message</mat-label>
+              <textarea matInput rows="5" formControlName="message" required></textarea>
+              <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+                Message is required
+              </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">
+              Submit
+            </button>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

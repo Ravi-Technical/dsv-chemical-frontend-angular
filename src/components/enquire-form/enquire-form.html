@@ -1,1 +1,209 @@
-<p>enquire-form works!</p>
+<section class="inquiry-page">
+  <div class="inquiry-card">
+
+    <div class="card-header">
+      <h1 class="card-title">Product Inquiry</h1>
+      <p class="card-subtitle">Fill in your details and select the products you manufacture</p>
+    </div>
+
+    <form [formGroup]="inquiryForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- ── Customer Details ─────────────────────────────── -->
+      <fieldset class="section">
+        <legend class="section-legend">Customer Details</legend>
+
+        <div class="form-row">
+          <label class="form-label" for="customerName">
+            Customer Name <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <input
+              id="customerName"
+              type="text"
+              class="input"
+              [class.input--error]="isInvalid('customerName')"
+              formControlName="customerName"
+              placeholder="Full name or company name"
+              autocomplete="name"
+            />
+            <span class="error-msg" *ngIf="isInvalid('customerName')">
+              <ng-container *ngIf="f['customerName'].errors?.['required']">Name is required.</ng-container>
+              <ng-container *ngIf="f['customerName'].errors?.['minlength']">Minimum 2 characters.</ng-container>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="address">
+            Address <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <textarea
+              id="address"
+              class="input textarea"
+              [class.input--error]="isInvalid('address')"
+              formControlName="address"
+              placeholder="Street address"
+              rows="3"
+              autocomplete="street-address"
+            ></textarea>
+            <span class="error-msg" *ngIf="isInvalid('address')">Address is required.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="city">
+            City <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <input
+              id="city"
+              type="text"
+              class="input"
+              [class.input--error]="isInvalid('city')"
+              formControlName="city"
+              placeholder="City"
+              autocomplete="address-level2"
+            />
+            <span class="error-msg" *ngIf="isInvalid('city')">City is required.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="country">
+            Country <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <input
+              id="country"
+              type="text"
+              class="input"
+              [class.input--error]="isInvalid('country')"
+              formControlName="country"
+              placeholder="Country"
+              autocomplete="country-name"
+            />
+            <span class="error-msg" *ngIf="isInvalid('country')">Country is required.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="telNo">
+            Tel No. <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <input
+              id="telNo"
+              type="tel"
+              class="input"
+              [class.input--error]="isInvalid('telNo')"
+              formControlName="telNo"
+              placeholder="+91 98765 43210"
+              autocomplete="tel"
+            />
+            <span class="error-msg" *ngIf="isInvalid('telNo')">
+              <ng-container *ngIf="f['telNo'].errors?.['required']">Phone number is required.</ng-container>
+              <ng-container *ngIf="f['telNo'].errors?.['pattern']">Enter a valid phone number.</ng-container>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="fax">Fax</label>
+          <div class="form-field">
+            <input
+              id="fax"
+              type="text"
+              class="input"
+              formControlName="fax"
+              placeholder="Fax number (optional)"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="email">
+            E-mail <span class="required">*</span>
+          </label>
+          <div class="form-field">
+            <input
+              id="email"
+              type="email"
+              class="input"
+              [class.input--error]="isInvalid('email')"
+              formControlName="email"
+              placeholder="you@company.com"
+              autocomplete="email"
+            />
+            <span class="error-msg" *ngIf="isInvalid('email')">
+              <ng-container *ngIf="f['email'].errors?.['required']">Email is required.</ng-container>
+              <ng-container *ngIf="f['email'].errors?.['email']">Enter a valid email address.</ng-container>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="queries">Queries</label>
+          <div class="form-field">
+            <textarea
+              id="queries"
+              class="input textarea"
+              formControlName="queries"
+              placeholder="Any questions or additional information…"
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <!-- ── Product Checkboxes ───────────────────────────── -->
+      <fieldset class="section" formGroupName="products">
+        <legend class="section-legend">
+          Please check the boxes corresponding to the products you make
+        </legend>
+
+        <div class="products-grid">
+          <label
+            *ngFor="let product of products"
+            class="checkbox-label"
+            [for]="product.id"
+          >
+            <input
+              [id]="product.id"
+              type="checkbox"
+              class="checkbox"
+              [formControlName]="product.id"
+            />
+            <span class="checkbox-box"></span>
+            <span class="checkbox-text">{{ product.label }}</span>
+          </label>
+        </div>
+
+      </fieldset>
+
+      <!-- ── Other Product ────────────────────────────────── -->
+      <fieldset class="section section--other">
+        <div class="form-row form-row--inline">
+          <label class="form-label" for="otherProduct">If other, please specify</label>
+          <div class="form-field form-field--grow">
+            <input
+              id="otherProduct"
+              type="text"
+              class="input"
+              formControlName="otherProduct"
+              placeholder="Specify other products…"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ── Actions ─────────────────────────────────────── -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn--primary">Submit</button>
+        <button type="button" class="btn btn--secondary" (click)="onReset()">Reset</button>
+      </div>
+
+    </form>
+  </div>
+</section>
